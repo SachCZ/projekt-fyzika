@@ -4,8 +4,9 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular/cli'],
+    frameworks: ['jasmine', '@angular/cli', "viewport"],
     plugins: [
+      require('karma-viewport'),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
@@ -21,6 +22,45 @@ module.exports = function (config) {
     },
     angularCli: {
       environment: 'dev'
+    },
+    viewport: {
+      breakpoints: [
+        {
+          name: "xs",
+          size: {
+            width: 560,
+            height: 560
+          }
+        },
+        {
+          name: "sm",
+          size: {
+            width: 768,
+            height: 1280
+          }
+        },
+        {
+          name: "md",
+          size: {
+            width: 1024,
+            height: 768
+          }
+        },
+        {
+          name: "lg",
+          size: {
+            width: 1440,
+            height: 900
+          }
+        },
+        {
+          name: "xl",
+          size: {
+            width: 2560,
+            height: 1440
+          }
+        }
+      ]
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
