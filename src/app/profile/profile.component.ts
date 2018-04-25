@@ -10,8 +10,8 @@ import {MatSnackBar} from "@angular/material";
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private auth: AuthService,
-              public snackBar: MatSnackBar) {
+  constructor(public auth: AuthService,
+              private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -22,8 +22,7 @@ export class ProfileComponent implements OnInit {
    *
    */
   googleLogin(): void {
-    this.auth.googleLogin()
-      .then(
+    this.auth.googleLogin().then(
         ignore => {
           this.snackBar.open('Přihlášení proběhlo úspěšně.', 'OK', {
             duration: 2000,
@@ -53,7 +52,7 @@ export class ProfileComponent implements OnInit {
           duration: 2000,
         });
 
-        return Promise.reject(new Error(err));
+        if (failed) return Promise.reject(new Error(err));
       })
   }
 }

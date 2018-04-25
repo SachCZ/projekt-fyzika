@@ -5,7 +5,6 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
 import {MyOwnMaterialModule} from "./app.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {DashboardComponent} from "./dashboard/dashboard.component";
 import {APP_BASE_HREF} from "@angular/common";
 import {ProfileComponent} from "./profile/profile.component";
 
@@ -14,7 +13,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        DashboardComponent,
         ProfileComponent
       ],
       imports: [

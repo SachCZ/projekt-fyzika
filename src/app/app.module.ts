@@ -1,10 +1,10 @@
+import * as Raven from 'raven-js';
 import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {
   MatButtonModule,
   MatCardModule,
@@ -23,7 +23,17 @@ import {CoreModule} from "./core/core.module";
 import {ProfileComponent} from './profile/profile.component';
 import {GlobalErrorHandler} from "./core/error-handler.service";
 import {AuthService} from "./core/auth.service";
-import {LoggingService} from "./core/logging.service";
+
+//Raven configuration point
+Raven
+  .config('https://db199e2a201e4c88936063d7483e4823@sentry.io/1192582', {
+    environment: environment.production ? 'prod' : 'dev',
+    shouldSendCallback: () => {
+      // Send callback if in production
+      return environment.production;
+    },
+  })
+  .install();
 
 @NgModule({
   imports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatCardModule, MatListModule, MatSnackBarModule],
@@ -36,7 +46,6 @@ export class MyOwnMaterialModule {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     ProfileComponent,
   ],
   imports: [
@@ -50,7 +59,6 @@ export class MyOwnMaterialModule {
   ],
   providers: [
     AuthService,
-    LoggingService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler
