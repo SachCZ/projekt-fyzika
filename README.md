@@ -6,6 +6,7 @@
 ## Developing the app on local machine
 
 ## Git and Github
+Use this model: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/).  
 When working on a future create a branch.
 Do not forget to write clear commit messages. When the work on that branch is done, 
 
