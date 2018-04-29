@@ -77,7 +77,7 @@ const angularFireAuthStub = {
     signInWithPopup: jasmine
       .createSpy('signInWithPopup')
       .and
-      .callFake(fakePopupSignInHandler)
+      .callFake(fakePopupSignInHandler),
   },
 };
 
