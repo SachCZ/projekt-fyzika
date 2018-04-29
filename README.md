@@ -7,7 +7,7 @@
 
 ## Git and Github
 Use this model: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/).  
-When working on a future create a branch.
+When working on a future create a branch. Use `--no-ff` option when merging branches to keep history.
 Do not forget to write clear commit messages. When the work on that branch is done, 
 
 ### Using WebStorm
