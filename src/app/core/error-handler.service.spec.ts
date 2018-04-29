@@ -7,7 +7,6 @@ import * as Raven from "raven-js";
 const testKitInitializer = require('raven-testkit');
 
 
-//TODO write unit tests for this
 describe('ErrorHandlerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({

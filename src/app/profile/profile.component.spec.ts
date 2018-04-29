@@ -6,7 +6,6 @@ import {APP_BASE_HREF} from "@angular/common";
 import {AuthService} from "../core/auth.service";
 import {MatSnackBar} from "@angular/material";
 
-//TODO write unit tests for ProfileComponent
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
